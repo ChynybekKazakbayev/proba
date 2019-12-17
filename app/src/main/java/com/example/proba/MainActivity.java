@@ -21,6 +21,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.result);
+        if (savedInstanceState!=null){
+            value1 = savedInstanceState.getInt("value1");
+            value2 = savedInstanceState.getInt("value2");
+            op = savedInstanceState.getString("op");
+
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("value1",value1);
+        outState.putInt("value2",value2);
+        outState.putString("op",op);
     }
 
     public void onClinic(View v) {
