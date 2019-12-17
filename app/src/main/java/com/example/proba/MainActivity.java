@@ -59,50 +59,60 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.multiply:
-                value1 = Integer.valueOf(textView.getText().toString());
-                textView.setText(value1 + "*");
-                op="*";
-                break;
-            case R.id.plus:
-                value1 = Integer.valueOf(textView.getText().toString());
-                textView.setText(value1 + "+");
-                op="+";
-                break;
-            case R.id.minus:
-                value1 = Integer.valueOf(textView.getText().toString());
-                textView.setText(value1 + "-");
-                op="-";
-                break;
-            case R.id.devite:
-                value1 = Integer.valueOf(textView.getText().toString());
-                textView.setText(value1 + "/");
-                op="/";
-                break;
-            case R.id.equel:
-                String first = textView.getText().toString().replace(value1 + op+"", "");
-                value2 = Integer.valueOf(first);
-                switch (op){
-                    case "+":
-                        textView.setText(value1 + "+" + value2 + "=" + (value1 + value2));
-                        break;
-                    case "-":
-                        textView.setText(value1 + "-" + value2 + "=" + (value1 - value2));
-                        break;
-                    case "*":
-                        textView.setText(value1 + "*" + value2 + "=" + (value1 * value2));
-                        break;
-                    case "/":
-                        textView.setText(value1 + "/" + value2 + "=" + (float)value1 / value2);
-                        break;
-                }
+        try {
+
+
+            switch (v.getId()) {
+                case R.id.multiply:
+                    value1 = Integer.valueOf(textView.getText().toString());
+                    textView.setText(value1 + "*");
+                    op = "*";
+                    break;
+                case R.id.plus:
+                    value1 = Integer.valueOf(textView.getText().toString());
+                    textView.setText(value1 + "+");
+                    op = "+";
+                    break;
+                case R.id.minus:
+                    value1 = Integer.valueOf(textView.getText().toString());
+                    textView.setText(value1 + "-");
+                    op = "-";
+                    break;
+                case R.id.devite:
+                    value1 = Integer.valueOf(textView.getText().toString());
+                    textView.setText(value1 + "/");
+                    op = "/";
+                    break;
+                case R.id.equel:
+
+                    String first = textView.getText().toString().replace(value1 + op + "", "");
+                    value2 = Integer.valueOf(first);
+                    switch (op) {
+                        case "+":
+                            textView.setText(value1 + "+" + value2 + "=" + (value1 + value2));
+                            break;
+                        case "-":
+                            textView.setText(value1 + "-" + value2 + "=" + (value1 - value2));
+                            break;
+                        case "*":
+                            textView.setText(value1 + "*" + value2 + "=" + (value1 * value2));
+                            break;
+                        case "/":
+                            textView.setText(value1 + "/" + value2 + "=" + (float) value1 / value2);
+                            break;
+                    }
+
+
 //                if (textView.equals())
 //                }
-                break;
-            case R.id.c:
-                textView.setText("");
-                break;
+                    break;
+                case R.id.c:
+                    textView.setText("");
+                    break;
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

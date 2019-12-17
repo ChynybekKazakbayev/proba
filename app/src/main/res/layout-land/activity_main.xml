@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_dark"
     tools:context=".MainActivity">
 
     <Button
@@ -58,15 +59,15 @@
         android:id="@+id/seven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="112dp"
         android:onClick="onClinic"
         android:text="@string/seven"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@id/eight"
         app:layout_constraintBottom_toTopOf="@id/four"
         app:layout_constraintRight_toLeftOf="@id/eight"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/eight"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <Button
         android:id="@+id/nine"
@@ -129,7 +130,7 @@
         android:id="@+id/minus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="252dp"
         android:onClick="onClick"
         android:text="@string/minus"
         android:textSize="20sp"
@@ -143,7 +144,7 @@
         android:id="@+id/plus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="252dp"
         android:onClick="onClick"
         android:text="@string/plus"
         android:textSize="20sp"
@@ -151,13 +152,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toRightOf="@id/six"
         app:layout_constraintTop_toTopOf="@id/six"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/equel"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="268dp"
         android:background="@drawable/round_button"
         android:onClick="onClick"
         android:text="@string/equel"
@@ -202,6 +203,8 @@
         android:text="@string/delete"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/devite"
+        app:layout_constraintEnd_toStartOf="@+id/devite"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintRight_toLeftOf="@id/devite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/devite"
@@ -233,9 +236,9 @@
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_marginTop="130dp"
         android:hint="result"
         android:textSize="45sp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
