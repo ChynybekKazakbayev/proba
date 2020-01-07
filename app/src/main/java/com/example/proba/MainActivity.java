@@ -2,6 +2,7 @@ package com.example.proba;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -15,26 +16,27 @@ public class MainActivity extends AppCompatActivity {
     String op;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.result);
-        if (savedInstanceState!=null){
+        if (savedInstanceState != null) {
             value1 = savedInstanceState.getInt("value1");
             value2 = savedInstanceState.getInt("value2");
             op = savedInstanceState.getString("op");
 
         }
+
+
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("value1",value1);
-        outState.putInt("value2",value2);
-        outState.putString("op",op);
+        outState.putInt("value1", value1);
+        outState.putInt("value2", value2);
+        outState.putString("op", op);
     }
 
     public void onClinic(View v) {
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 textView.append("1");
                 break;
             case R.id.two:
-                textView.append( "2");
+                textView.append("2");
                 break;
             case R.id.three:
                 textView.append("3");
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nine:
                 textView.append("9");
                 break;
+            case R.id.share:
+                textView.append("");
         }
     }
 
@@ -124,9 +128,28 @@ public class MainActivity extends AppCompatActivity {
                     textView.setText("");
                     break;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
+
         }
+
+
+
+
     }
-}
+        public void onShareClick (View v){
+
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, value1);
+            Intent chosenIntent = Intent.createChooser(intent, "Window");
+            startActivity(chosenIntent);
+
+     }
+     public  void onNextClick(View v){
+         Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+         intent.putExtra("k", value1);
+         intent.putExtra("k",value2);
+         startActivity(intent);
+     }
+    }
